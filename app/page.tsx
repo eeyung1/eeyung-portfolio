@@ -166,7 +166,7 @@ export default function Home() {
                 <span className="text-xs bg-white text-navy px-2 py-1 rounded">eth_account</span>
               </div>
               <div className="flex gap-4 mt-2 text-sm font-medium">
-                <a href="https://crdledger-bmoni-settlement.render.com"
+                <a href="https://crdledger-bmoni-settlement.onrender.com"
                   className="text-accent hover:underline"
                 >
                   Live Site
