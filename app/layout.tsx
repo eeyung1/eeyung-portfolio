@@ -13,7 +13,7 @@ const sourceSerif = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
-  title: "Eyung Emmanuel — Backend Engineer",
+  title: "Emmanuel Eyung — Backend Engineer",
   description:
     "Backend Engineer (Go & Python) | AI/LLM Integration & Multi-Agent Systems. Portfolio of Eyung Emmanuel Odugbo.",
 };
