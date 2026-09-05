@@ -7,14 +7,14 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-6 py-20 flex flex-col items-center text-center gap-6">
           <Image
             src="/eeyung.jpg"
-            alt="Eyung Emmanuel"
+            alt="Emmanuel Eyung"
             width={160}
             height={160}
             className="rounded-full object-cover w-40 h-40"
             priority
           />
           <h1 className="font-serif text-4xl sm:text-5xl">
-            Eyung Emmanuel
+            Emmanuel Eyung
           </h1>
           <p className="text-lg text-light max-w-2xl">
             Backend Engineer (Go &amp; Python) | AI/LLM Integration &amp; Multi-Agent Systems
@@ -41,7 +41,7 @@ export default function Home() {
         <div className="mx-auto max-w-3xl px-6 py-20">
           <h2 className="font-serif text-3xl text-navy mb-6">About</h2>
           <p className="text-ink leading-relaxed">
-            I&apos;m Eyung Emmanuel, a backend-focused software engineer building
+            I&apos;m Emmanuel Eyung, a backend-focused software engineer building
             production systems in Go and Python. I&apos;ve shipped and maintained
             live applications used by real people — from a credit-tracking
             platform serving a 200-person hostel community to a study-and-reflection
