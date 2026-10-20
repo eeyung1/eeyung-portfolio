@@ -1,240 +1,252 @@
 import Image from "next/image";
+import { ProjectGrid } from "@/components/project-grid";
+import { Contact } from "@/components/contact";
+import { Activity } from "@/components/activity";
+import { services, profile } from "@/lib/portfolio";
 
 export default function Home() {
   return (
-    <main>
-      <section className="bg-navy text-white">
-        <div className="mx-auto max-w-5xl px-6 py-20 flex flex-col items-center text-center gap-6">
-          <Image
-            src="/eeyung.jpg"
-            alt="Emmanuel Eyung"
-            width={160}
-            height={160}
-            className="rounded-full object-cover w-40 h-40"
-            priority
-          />
-          <h1 className="font-serif text-4xl sm:text-5xl">
-            Emmanuel Eyung
+    <main id="main-content">
+      <section className="hero container">
+        <div className="hero-copy">
+          <p className="eyebrow hero-eyebrow">
+            <span className="status-dot" /> SOFTWARE ENGINEER · PRODUCT BUILDER
+          </p>
+          <h1>
+            Good ideas deserve
+            <br />
+            to become
+            <br />
+            <em>working products.</em>
           </h1>
-          <p className="text-lg text-light max-w-2xl">
-            Backend Engineer (Go &amp; Python) | AI/LLM Integration &amp; Multi-Agent Systems
+          <p className="hero-description">
+            I’m Emmanuel Eyung. I build thoughtful web applications, reliable
+            backends, and AI-powered workflows that solve problems for real
+            people.
           </p>
-          <p className="text-sm text-light/80">
-            Currently training as an AI-Native Software Engineer at Learn2Earn.ng
-          </p>
-          <div className="flex gap-4 mt-4">
-            <a href="#projects"
-              className="bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-md font-medium transition-colors"
-            >
-              View Projects
+          <div className="hero-actions">
+            <a className="button button-dark" href="#work">
+              Explore my work <span>↘</span>
             </a>
-            <a href="mailto:eyungemmanuel@gmail.com"
-              className="border border-white/40 hover:border-white text-white px-6 py-3 rounded-md font-medium transition-colors"
-            >
-              Contact Me
+            <a className="text-link" href="#contact">
+              Let’s build something <span>↗</span>
+            </a>
+          </div>
+          <div className="hero-footnote">
+            <span className="small-line" /> Based in Nigeria. Building for
+            people everywhere.
+          </div>
+        </div>
+        <div className="hero-portrait">
+          <div className="portrait-frame">
+            <Image
+              src="/eeyung.jpg"
+              alt="Emmanuel Eyung, software engineer and product builder"
+              width={640}
+              height={640}
+              priority
+              sizes="(max-width: 760px) 90vw, 40vw"
+            />
+            <div className="portrait-caption">
+              <span>EMMANUEL EYUNG</span>
+              <span>THE PERSON BEHIND THE CODE ↗</span>
+            </div>
+          </div>
+          <div className="portrait-stamp">
+            <span>IDEA TO</span>
+            <strong>impact.</strong>
+            <span>ONE RELEASE AT A TIME</span>
+          </div>
+          <span className="portrait-index">01 / INTRODUCTION</span>
+        </div>
+      </section>
+      <div className="expertise-strip">
+        <div className="container">
+          <span>FROM INTERFACE TO INFRASTRUCTURE</span>
+          <p>
+            Go <i>✳</i> Python <i>✳</i> React & Next.js <i>✳</i> PostgreSQL{" "}
+            <i>✳</i> AI & LLMs
+          </p>
+        </div>
+      </div>
+      <section id="work" className="section container">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">01 / SELECTED WORK</p>
+            <h2>
+              Real problems.
+              <br />
+              <em>Considered solutions.</em>
+            </h2>
+          </div>
+          <p>
+            A closer look at the products I build and the engineering behind
+            them. Explore the decisions, the code, and the work still ahead.
+          </p>
+        </div>
+        <ProjectGrid />
+      </section>
+      <section id="about" className="about-section">
+        <div className="container about-grid">
+          <div>
+            <p className="eyebrow">02 / THE ENGINEER BEHIND THE WORK</p>
+            <h2>
+              Curiosity started it.
+              <br />
+              <em>Care keeps it going.</em>
+            </h2>
+            <div className="about-note">
+              <span>“</span>
+              <p>
+                I like problems where a real person is waiting on the other end
+                of what I ship.
+              </p>
+            </div>
+          </div>
+          <div className="about-copy">
+            <p className="lead">
+              Before software, I taught Mathematics and Physics. That experience
+              still shapes how I build: understand the problem, make the
+              difficult parts clear, and help people move forward.
+            </p>
+            <p>
+              Today, I’m a backend-focused software engineer working across Go,
+              Python, databases, web interfaces and AI integrations. My work
+              spans learning platforms, everyday finance, voice-driven inventory
+              and multi-agent development workflows.
+            </p>
+            <p>
+              I bring the same attention to a small interface detail as I do to
+              the system behind it. A product needs to make sense to its users,
+              protect their data, and stay understandable for the next person
+              working on the code.
+            </p>
+            <div className="skill-groups">
+              <div>
+                <h3>Backend & data</h3>
+                <p>
+                  Go · Python · SQL · REST APIs
+                  <br />
+                  PostgreSQL · Authentication
+                </p>
+              </div>
+              <div>
+                <h3>Interfaces & delivery</h3>
+                <p>
+                  React · Next.js · TypeScript
+                  <br />
+                  GitHub · Docker · Render · Vercel
+                </p>
+              </div>
+              <div>
+                <h3>AI & automation</h3>
+                <p>
+                  LLM integrations · LangGraph
+                  <br />
+                  Agent coordination · Prompt design
+                </p>
+              </div>
+              <div>
+                <h3>Engineering practice</h3>
+                <p>
+                  Testing · CI/CD · Code review
+                  <br />
+                  Debugging · Clear documentation
+                </p>
+              </div>
+            </div>
+            <a className="text-link" href={profile.linkedin}>
+              More about my journey <span>↗</span>
             </a>
           </div>
         </div>
       </section>
-
-      <section id="about" className="bg-white">
-        <div className="mx-auto max-w-3xl px-6 py-20">
-          <h2 className="font-serif text-3xl text-navy mb-6">About</h2>
-          <p className="text-ink leading-relaxed">
-            I&apos;m Emmanuel Eyung, a backend-focused software engineer building
-            production systems in Go and Python. I&apos;ve shipped and maintained
-            live applications used by real people — from a credit-tracking
-            platform serving a 200-person hostel community to a study-and-reflection
-            tool used by fellow trainees across multiple campuses — and I build
-            multi-agent AI systems from scratch, without relying on existing
-            frameworks. Before software, I taught Mathematics and Physics, which
-            shaped how I approach engineering: break a hard problem down until
-            each piece is small enough to actually understand, then build it back
-            up. I&apos;m currently completing an intensive AI-Native Software
-            Engineer training program, going deep on full-stack development,
-            AI/LLM integration, and backend architecture. I like problems where a
-            real person is waiting on the other end of what I ship.
+      <section id="services" className="section container">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">03 / HOW I CAN HELP</p>
+            <h2>
+              Your next step,
+              <br />
+              <em>built together.</em>
+            </h2>
+          </div>
+          <p>
+            From a new idea to a system that needs attention, I can help turn
+            the next challenge into a clear, deliverable piece of work.
           </p>
         </div>
+        <div className="services-list">
+          {services.map((s) => (
+            <article key={s.number}>
+              <span className="service-number">{s.number}</span>
+              <h3>{s.title}</h3>
+              <div>
+                <p>{s.description}</p>
+                <small>{s.deliverables}</small>
+              </div>
+              <a
+                href="#contact"
+                aria-label={`Discuss ${s.title.toLowerCase()}`}
+              >
+                ↗
+              </a>
+            </article>
+          ))}
+        </div>
       </section>
-
-      <section id="skills" className="bg-light">
-        <div className="mx-auto max-w-5xl px-6 py-20">
-          <h2 className="font-serif text-3xl text-navy mb-10">Skills</h2>
-          <div className="grid sm:grid-cols-2 gap-8">
-            <div className="border-l-4 border-accent pl-5">
-              <h3 className="text-navy font-semibold mb-2">Languages</h3>
-              <p className="text-ink">Go (Golang), Python, SQL</p>
+      <section className="process-section">
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">04 / THE WAY I WORK</p>
+              <h2>
+                Clear thinking.
+                <br />
+                <em>Visible progress.</em>
+              </h2>
             </div>
-            <div className="border-l-4 border-accent pl-5">
-              <h3 className="text-navy font-semibold mb-2">Backend &amp; APIs</h3>
-              <p className="text-ink">
-                REST API design, handler/service/repository architecture,
-                JWT/bcrypt authentication, goroutines &amp; concurrency
-              </p>
-            </div>
-            <div className="border-l-4 border-accent pl-5">
-              <h3 className="text-navy font-semibold mb-2">AI / LLM</h3>
-              <p className="text-ink">
-                Multi-agent system design, LLM API integration (Groq), prompt
-                engineering
-              </p>
-            </div>
-            <div className="border-l-4 border-accent pl-5">
-              <h3 className="text-navy font-semibold mb-2">Tools</h3>
-              <p className="text-ink">
-                Git, Docker, Render, Vercel, Turso, HTTP/JSON, unit testing
-                (httptest, table-driven tests)
-              </p>
-            </div>
+            <p>
+              You should know what is being built, why it matters, and how we
+              will know it works.
+            </p>
+          </div>
+          <div className="process-grid">
+            {[
+              [
+                "01",
+                "Understand",
+                "Start with the people, the problem and the existing system. Agree on a useful, achievable outcome.",
+              ],
+              [
+                "02",
+                "Build",
+                "Work in focused increments, with readable code and progress you can review along the way.",
+              ],
+              [
+                "03",
+                "Verify",
+                "Check the important user journeys, edge cases and deployment requirements before calling it done.",
+              ],
+              [
+                "04",
+                "Hand over",
+                "Deliver the source, explain the decisions and document what you need to run and improve the product.",
+              ],
+            ].map(([n, title, body]) => (
+              <article key={n}>
+                <span>{n}</span>
+                <h3>{title}</h3>
+                <p>{body}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
-
-      <section id="projects" className="bg-white">
-        <div className="mx-auto max-w-5xl px-6 py-20">
-          <h2 className="font-serif text-3xl text-navy mb-10">Projects</h2>
-          <div className="grid sm:grid-cols-2 gap-8">
-
-            <div className="bg-light rounded-md p-6 flex flex-col gap-3">
-              <h3 className="text-navy font-semibold text-lg">CRDLedger</h3>
-              <p className="text-ink text-sm">
-                Credit-tracking web app for a 200-person hostel economy. Live in
-                production with bcrypt auth, mutual-consent transactions,
-                role-aware dashboards, and a mobile PWA.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className="text-xs bg-white text-navy px-2 py-1 rounded">Go</span>
-                <span className="text-xs bg-white text-navy px-2 py-1 rounded">PostgreSQL/Turso</span>
-                <span className="text-xs bg-white text-navy px-2 py-1 rounded">Render</span>
-                <span className="text-xs bg-white text-navy px-2 py-1 rounded">PWA</span>
-              </div>
-              <div className="flex gap-4 mt-2 text-sm font-medium">
-                <a href="https://crdledger.onrender.com"
-                  className="text-accent hover:underline"
-                >
-                  Live Site
-                </a>
-                <a href="https://github.com/eeyung1/crdledger"
-                  className="text-accent hover:underline"
-                >
-                  View Code
-                </a>
-              </div>
-            </div>
-
-            <div className="bg-light rounded-md p-6 flex flex-col gap-3">
-              <h3 className="text-navy font-semibold text-lg">L2EStudyLink</h3>
-              <p className="text-ink text-sm">
-                Peer-to-peer study, timetable, and reflection platform used by
-                students across multiple campuses in the Learn2Earn program.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className="text-xs bg-white text-navy px-2 py-1 rounded">Go</span>
-                <span className="text-xs bg-white text-navy px-2 py-1 rounded">Gin</span>
-                <span className="text-xs bg-white text-navy px-2 py-1 rounded">PostgreSQL</span>
-                <span className="text-xs bg-white text-navy px-2 py-1 rounded">JWT Auth</span>
-              </div>
-              <div className="flex gap-4 mt-2 text-sm font-medium">
-                <a href="https://l2estudylink.onrender.com"
-                  className="text-accent hover:underline"
-                >
-                  Live Site
-                </a>
-                <a href="https://github.com/eeyung1/L2EStudyLink"
-                  className="text-accent hover:underline"
-                >
-                  View Code
-                </a>
-              </div>
-            </div>
-
-            <div className="bg-light rounded-md p-6 flex flex-col gap-3">
-              <h3 className="text-navy font-semibold text-lg">
-                CRDLedger × BMONI Settlement Integration
-              </h3>
-              <p className="text-ink text-sm">
-                An NGN rails integration connecting CRDLedger&apos;s
-                credit-tracking to real bank settlement — verify a bank account,
-                register a beneficiary, and initiate a withdrawal, built against
-                BMONI Embedded&apos;s wallet API for a live hackathon exhibition.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className="text-xs bg-white text-navy px-2 py-1 rounded">Python</span>
-                <span className="text-xs bg-white text-navy px-2 py-1 rounded">Flask</span>
-                <span className="text-xs bg-white text-navy px-2 py-1 rounded">BMONI API</span>
-                <span className="text-xs bg-white text-navy px-2 py-1 rounded">eth_account</span>
-              </div>
-              <div className="flex gap-4 mt-2 text-sm font-medium">
-                <a href="https://crdledger-bmoni-settlement.onrender.com"
-                  className="text-accent hover:underline"
-                >
-                  Live Site
-                </a>
-                <a href="https://github.com/eeyung1/crdledger-bmoni-settlement"
-                  className="text-accent hover:underline"
-                >
-                  View Code
-                </a>
-              </div>
-            </div>
-
-            <div className="bg-light rounded-md p-6 flex flex-col gap-3">
-              <h3 className="text-navy font-semibold text-lg">Groupie-Tracker</h3>
-              <p className="text-ink text-sm">
-                External API data explorer with goroutine-based parallel
-                fetching (8x speed improvement), geolocation mapping, and a
-                full table-driven test suite.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className="text-xs bg-white text-navy px-2 py-1 rounded">Go</span>
-                <span className="text-xs bg-white text-navy px-2 py-1 rounded">Concurrency</span>
-                <span className="text-xs bg-white text-navy px-2 py-1 rounded">Testing</span>
-              </div>
-              <div className="flex gap-4 mt-2 text-sm font-medium">
-                <a href="https://github.com/eeyung1/Practice-code/tree/main/groupie-tracker"
-                  className="text-accent hover:underline"
-                >
-                  View Code
-                </a>
-              </div>
-            </div>
-
-          </div>
-        </div>
+      <section className="section container">
+        <Activity />
       </section>
-
-      <section id="contact" className="bg-navy text-white">
-        <div className="mx-auto max-w-3xl px-6 py-20 flex flex-col items-center text-center gap-6">
-          <h2 className="font-serif text-3xl">Get in Touch</h2>
-          <p className="text-light max-w-md">
-            Open to internship and collaboration opportunities. The fastest
-            way to reach me is email.
-          </p>
-          <a href="mailto:eyungemmanuel@gmail.com"
-            className="bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-md font-medium transition-colors"
-          >
-            eyungemmanuel@gmail.com
-          </a>
-          <div className="flex gap-6 mt-4 text-light">
-            <a href="https://www.linkedin.com/in/emmanuel-eyung-882331425"
-              className="hover:text-white transition-colors"
-            >
-              LinkedIn
-            </a>
-            <a href="https://github.com/eeyung1"
-              className="hover:text-white transition-colors"
-            >
-              GitHub
-            </a>
-            <a href="https://x.com/eyungchess"
-              className="hover:text-white transition-colors"
-            >
-              X
-            </a>
-          </div>
-        </div>
-      </section>
+      <Contact />
     </main>
   );
 }

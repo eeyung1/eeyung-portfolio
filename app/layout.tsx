@@ -1,32 +1,54 @@
 import type { Metadata } from "next";
-import { Inter, Source_Serif_4 } from "next/font/google";
+import { Header, Footer } from "@/components/site-shell";
+import { profile } from "@/lib/portfolio";
 import "./globals.css";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-const sourceSerif = Source_Serif_4({
-  variable: "--font-source-serif",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Emmanuel Eyung — Backend Engineer",
+  metadataBase: new URL(profile.site),
+  title: {
+    default: "Emmanuel Eyung — Software Engineer & Product Builder",
+    template: "%s | Emmanuel Eyung",
+  },
   description:
-    "Backend Engineer (Go & Python) | AI/LLM Integration & Multi-Agent Systems. Portfolio of Eyung Emmanuel Odugbo.",
+    "I build web applications, reliable Go and Python backends, and AI-powered workflows. Explore my projects and work with me on your next product.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "en_GB",
+    siteName: "Emmanuel Eyung",
+    title: "Emmanuel Eyung — Software Engineer & Product Builder",
+    description:
+      "Good ideas deserve to become working products. Explore my work in product engineering, APIs and AI.",
+    url: profile.site,
+  },
+  twitter: { card: "summary_large_image" },
 };
-
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: profile.name,
+    url: profile.site,
+    image: `${profile.site}/eeyung.jpg`,
+    jobTitle: "Software Engineer",
+    sameAs: [profile.github, profile.linkedin, profile.x],
+  };
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${sourceSerif.variable} antialiased`}>
+      <body>
+        <a className="skip-link" href="#main-content">
+          Skip to content
+        </a>
+        <Header />
         {children}
+        <Footer />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(data).replace(/</g, "\\u003c"),
+          }}
+        />
       </body>
     </html>
   );
