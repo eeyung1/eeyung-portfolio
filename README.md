@@ -12,7 +12,7 @@ Validation: `npm run lint`, `npm test`, `npm run typecheck`, `npm run build`. Gi
 
 - [x] Responsive editorial homepage using Emmanuel's existing portrait.
 - [x] Light/dark theme, mobile navigation, skip link and reduced-motion support.
-- [x] Filterable project catalogue and six dedicated case-study routes.
+- [x] Filterable project catalogue and eight dedicated case-study routes.
 - [x] About, capabilities, services and working-process sections.
 - [x] Live GitHub repository feed through a server endpoint, with timeout, caching and explicit failure/empty states.
 - [x] Project enquiry builder that opens a prefilled email draft; copy-email action and fallback.
@@ -20,6 +20,8 @@ Validation: `npm run lint`, `npm test`, `npm run typecheck`, `npm run build`. Gi
 - [x] Pull-request CI for lint, activity endpoint regressions, TypeScript and production build.
 
 - [x] Custom Eyung browser-tab icon, WhatsApp contact (+2348128162561) and X profile (@eeyung1).
+
+Nativity Guard and De Go Salon are explicitly labelled as collaborations, with contribution scope, source links and owner-provided live URLs. Their case studies distinguish team product capabilities from Emmanuel’s contributions.
 
 ## Updating content
 
