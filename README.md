@@ -19,6 +19,8 @@ Validation: `npm run lint`, `npm test`, `npm run typecheck`, `npm run build`. Gi
 - [x] Page metadata, generated social image, structured data, sitemap and robots policy.
 - [x] Pull-request CI for lint, activity endpoint regressions, TypeScript and production build.
 
+- [x] Custom Eyung browser-tab icon, WhatsApp contact (+2348128162561) and X profile (@eeyung1).
+
 ## Updating content
 
 `lib/portfolio.ts` is the version-controlled content source for projects, services, profile links and contact details. Add a project there to generate its case-study route and sitemap entry. Update homepage narrative in `app/page.tsx`; layout and theme tokens are in `app/globals.css`.
