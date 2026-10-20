@@ -105,6 +105,7 @@ export function Footer() {
         <a href={profile.github}>GitHub ↗</a>
         <a href={profile.linkedin}>LinkedIn ↗</a>
         <a href={profile.x}>X ↗</a>
+        <a href={profile.whatsapp}>WhatsApp ↗</a>
       </div>
       <small>© {new Date().getFullYear()} Emmanuel Eyung</small>
     </footer>

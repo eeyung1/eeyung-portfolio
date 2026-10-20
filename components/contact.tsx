@@ -36,6 +36,15 @@ export function Contact() {
           <a className="email-link" href={`mailto:${profile.email}`}>
             {profile.email} ↗
           </a>
+          <p className="contact-intro">
+            <a className="text-link" href={profile.whatsapp}>
+              WhatsApp: {profile.phone} ↗
+            </a>
+            <br />
+            <a className="text-link" href={profile.x}>
+              Follow @eeyung1 on X ↗
+            </a>
+          </p>
           <button className="copy-button" onClick={copy}>
             {copied ? "Email copied ✓" : "Copy email address"}
           </button>

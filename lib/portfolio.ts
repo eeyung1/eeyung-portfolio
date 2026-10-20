@@ -3,7 +3,9 @@ export const profile = {
   email: "eyungemmanuel@gmail.com",
   github: "https://github.com/eeyung1",
   linkedin: "https://www.linkedin.com/in/emmanuel-eyung-882331425",
-  x: "https://x.com/eyungchess",
+  x: "https://x.com/eeyung1",
+  whatsapp: "https://wa.me/2348128162561",
+  phone: "+2348128162561",
   site: "https://eeyung.vercel.app",
 };
 

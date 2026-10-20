@@ -4,6 +4,7 @@ import { profile } from "@/lib/portfolio";
 import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(profile.site),
+  icons: { icon: "/icon.svg", shortcut: "/icon.svg" },
   title: {
     default: "Emmanuel Eyung — Software Engineer & Product Builder",
     template: "%s | Emmanuel Eyung",
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
       "Good ideas deserve to become working products. Explore my work in product engineering, APIs and AI.",
     url: profile.site,
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { card: "summary_large_image", creator: "@eeyung1" },
 };
 export default function RootLayout({
   children,
