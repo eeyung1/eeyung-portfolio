@@ -55,3 +55,22 @@ The freshpex reference informed the visual direction: navy surfaces, a cyan acce
 - [ ] Owner acceptance on a physical phone and laptop.
 
 Workflow: create a feature branch, push changes, open a pull request, review the diff, wait for lint/tests/typecheck/build CI to pass, then merge. Use no co-authored commit trailer. Update this checklist alongside the implementation. Successful CI does not establish real-device acceptance.
+
+## Connected-network motion — reference recording follow-up
+
+The supplied 40-second recording and a fresh live review of freshpex.vercel.app showed that the central visual identity is a persistent constellation field: glowing cyan nodes, distance-faded branching connections, a dark background, subtle colour glows, a large gradient name, a typing role title, translucent surfaces and hover feedback. The first refresh reproduced the palette but missed that motion system.
+
+- [x] Viewport-sized canvas behind the entire site, including case studies, with drifting nodes and branching connections.
+- [x] Pointer proximity connections on devices with a fine pointer.
+- [x] Centered full-height introduction, animated cyan/purple/pink name, typing role title and scroll cue; portrait moved into About.
+- [x] Translucent panels, coloured ambient glows, gradient primary actions and project hover/focus feedback.
+- [x] Visible pause/play control freezes the network, typewriter and CSS animation.
+- [x] OS reduced-motion preference renders a static network and static role title; no animation loop runs.
+- [x] Mobile density capped at 32 nodes, desktop at 90; pixel ratio capped at 1.5 and drawing capped at 30fps. Animation stops in hidden tabs and listeners/frames are cleaned up.
+- [x] Network regressions cover density, bounded movement and connection limits.
+- [x] CI browser gate verifies changing canvas pixels, pause, reduced motion, 320/390/768/1440px overflow, project filters, theme persistence, mobile menu and case-study navigation; screenshots are uploaded as a CI artifact.
+- [ ] Owner acceptance of the motion and appearance on a physical phone and laptop.
+
+There is no blocking imitation loading screen. Content is server-rendered immediately and the decorative network mounts after hydration. The canvas ignores pointer events and is hidden from assistive technology; typewriter text has a stable screen-reader alternative. No animation library, remote script or tracking is added.
+
+Run `npx playwright install chromium` once, then `npm run test:browser` after `npm run build` for the production browser checks. Test evidence does not establish performance on every physical device.
