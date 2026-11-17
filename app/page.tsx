@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { AnimatedRole } from "@/components/network-background";
 import Link from "next/link";
 import { ProjectGrid } from "@/components/project-grid";
 import { Contact } from "@/components/contact";
@@ -7,19 +8,15 @@ import { services, profile } from "@/lib/portfolio";
 
 export default function Home() {
   return (
-    <main id="main-content">
+    <main id="main-content" className="motion-home">
       <section className="hero container">
         <div className="hero-copy">
           <p className="eyebrow hero-eyebrow">
             <span className="status-dot" /> GO · PYTHON · APPLIED AI
           </p>
-          <h1>
-            Emmanuel Eyung.
-            <br />
-            <em>Engineering ideas</em>
-            <br />
-            into working products.
-          </h1>
+          <p className="hero-greeting">Hello, I’m</p>
+          <h1><span className="gradient-name">Emmanuel Eyung.</span></h1>
+          <AnimatedRole />
           <p className="hero-description">
             I’m a backend-focused software engineer building web applications,
             reliable APIs, and AI workflows. From the first database table to the
@@ -33,33 +30,15 @@ export default function Home() {
               Discuss a project <span>↗</span>
             </a>
           </div>
+          <div className="hero-specialisms" aria-label="Core technologies">
+            <span>Go</span><span>Python</span><span>Next.js</span><span>PostgreSQL</span><span>AI agents</span>
+          </div>
           <div className="hero-footnote">
             <span className="small-line" /> Based in Nigeria. Building for
             people everywhere.
           </div>
         </div>
-        <div className="hero-portrait">
-          <div className="portrait-frame">
-            <Image
-              src="/eeyung.jpg"
-              alt="Emmanuel Eyung, software engineer and product builder"
-              width={640}
-              height={640}
-              priority
-              sizes="(max-width: 760px) 90vw, 40vw"
-            />
-            <div className="portrait-caption">
-              <span>EMMANUEL EYUNG</span>
-              <span>THE PERSON BEHIND THE CODE ↗</span>
-            </div>
-          </div>
-          <div className="portrait-stamp">
-            <span>IDEA TO</span>
-            <strong>impact.</strong>
-            <span>ONE RELEASE AT A TIME</span>
-          </div>
-          <span className="portrait-index">SOFTWARE ENGINEER / NIGERIA</span>
-        </div>
+        <a className="hero-scroll" href="#work">Discover my work <span aria-hidden="true">↓</span></a>
       </section>
       <div className="container proof-strip" aria-label="Explore my engineering work">
         <Link href="/work/l2estudylink"><span>PRODUCT ENGINEERING</span><strong>Learning, connected.</strong><small>L2EStudyLink · Go & PostgreSQL ↗</small></Link>
@@ -101,6 +80,28 @@ export default function Home() {
               <br />
               <em>Care keeps it going.</em>
             </h2>
+        <div className="hero-portrait">
+          <div className="portrait-frame">
+            <Image
+              src="/eeyung.jpg"
+              alt="Emmanuel Eyung, software engineer and product builder"
+              width={640}
+              height={640}
+              sizes="(max-width: 760px) 85vw, 330px"
+            />
+            <div className="portrait-caption">
+              <span>EMMANUEL EYUNG</span>
+              <span>THE PERSON BEHIND THE CODE ↗</span>
+            </div>
+          </div>
+          <div className="portrait-stamp">
+            <span>IDEA TO</span>
+            <strong>impact.</strong>
+            <span>ONE RELEASE AT A TIME</span>
+          </div>
+          <span className="portrait-index">SOFTWARE ENGINEER / NIGERIA</span>
+        </div>
+
             <div className="about-note">
               <span>“</span>
               <p>

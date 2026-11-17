@@ -19,3 +19,11 @@ jobs:
       - run: npm test
       - run: npm run typecheck
       - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:browser
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: portfolio-browser-evidence
+          path: test-results/
+          if-no-files-found: ignore

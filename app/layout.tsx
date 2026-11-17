@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Header, Footer } from "@/components/site-shell";
 import { profile } from "@/lib/portfolio";
 import "./globals.css";
+import { NetworkBackground } from "@/components/network-background";
 export const metadata: Metadata = {
   metadataBase: new URL(profile.site),
   icons: { icon: "/icon.svg", shortcut: "/icon.svg" },
@@ -38,6 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="dark">
       <body>
+        <NetworkBackground />
         <a className="skip-link" href="#main-content">
           Skip to content
         </a>
