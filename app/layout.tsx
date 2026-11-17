@@ -36,7 +36,7 @@ export default function RootLayout({
     sameAs: [profile.github, profile.linkedin, profile.x],
   };
   return (
-    <html lang="en">
+    <html lang="en" data-theme="dark">
       <body>
         <a className="skip-link" href="#main-content">
           Skip to content
