@@ -1491,7 +1491,8 @@ body { isolation: isolate; }
 .network-aurora { position: absolute; inset: -15%; background: radial-gradient(ellipse at 25% 35%, #1766ce18, transparent 50%), radial-gradient(ellipse at 80% 65%, #a14aea12, transparent 48%); animation: aurora-drift 18s ease-in-out infinite alternate; }
 .site-header { background: color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter: blur(16px); }
 .motion-home .hero { display: flex; flex-direction: column; justify-content: center; text-align: center; gap: 0; min-height: calc(100svh - 88px); padding-block: 72px 42px; }
-.motion-home .hero-copy { width: 100%; max-width: 1000px; }
+.motion-home .hero-copy { width: 100%; max-width: 1000px; animation: none; }
+.motion-home .hero-portrait { animation: none; }
 .motion-home .hero::before { display: none; }
 .motion-home .hero-eyebrow { justify-content: center; margin-bottom: 22px; }
 .hero-greeting { color: var(--accent); font-size: 16px; margin-bottom: 12px; }

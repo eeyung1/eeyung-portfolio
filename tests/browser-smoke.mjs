@@ -50,7 +50,8 @@ try {
   assert.equal(await page.locator("html").getAttribute("data-theme"), "light", "theme preference survives reload");
   await page.getByRole("button", { name: "Switch to dark theme" }).click();
   await page.getByRole("button", { name: "Pause background animation", exact: true }).click();
-  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.evaluate(() => window.scrollTo({ top: 0, behavior: "instant" }));
+  assert.equal(await page.locator(".hero-copy").evaluate(node => getComputedStyle(node).opacity), "1", "pause never leaves introduction faded");
   await mkdir("test-results", { recursive: true });
   await page.screenshot({ path: "test-results/desktop-network.png" });
   await page.setViewportSize({ width: 390, height: 844 });
