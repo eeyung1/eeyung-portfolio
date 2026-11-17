@@ -42,3 +42,16 @@ Reference analysis: the supplied portfolio uses Next.js with database-backed pub
 The existing Vercel Git integration can build this standard Next.js application. Merge the feature PR only after reviewing its checks and preview. No schema migrations or environment changes are required. Change `profile.site` if the canonical domain changes.
 
 Pending acceptance: review content, verify the Vercel preview on phone and laptop, test navigation/filter/theme/email handoff and check real GitHub responses. Browser/device and production verification must be recorded separately from a successful build.
+
+## Reference-inspired portfolio refresh
+
+The freshpex reference informed the visual direction: navy surfaces, a cyan accent, prominent introduction and clear project navigation. This portfolio keeps its own content, portrait and evidence-based case studies.
+
+- [x] Navy/cyan default theme with a retained light option and saved preference.
+- [x] Name-led introduction, engineering focus and direct project enquiry action.
+- [x] Three linked capability highlights without invented statistics.
+- [x] Four selected projects on first load; expandable full catalogue and category filters.
+- [x] Visible contribution labels on project cards and responsive card surfaces.
+- [ ] Owner acceptance on a physical phone and laptop.
+
+Workflow: create a feature branch, push changes, open a pull request, review the diff, wait for lint/tests/typecheck/build CI to pass, then merge. Use no co-authored commit trailer. Update this checklist alongside the implementation. Successful CI does not establish real-device acceptance.

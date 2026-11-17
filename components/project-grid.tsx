@@ -43,7 +43,12 @@ export function ProjectVisual({
 }
 export function ProjectGrid() {
   const [filter, setFilter] = useState("All work");
-  const selected = projects.filter(
+  const [expanded, setExpanded] = useState(false);
+  const featuredSlugs = ["l2estudylink", "multi-agent-orchestrator", "listenledger", "crdledger"];
+  const catalogue = filter === "All work" && !expanded
+    ? featuredSlugs.flatMap((slug) => projects.filter((project) => project.slug === slug))
+    : projects;
+  const selected = catalogue.filter(
     (p) => filter === "All work" || p.category === filter,
   );
   return (
@@ -58,7 +63,10 @@ export function ProjectGrid() {
           <button
             key={f}
             aria-pressed={filter === f}
-            onClick={() => setFilter(f)}
+            onClick={() => {
+              setFilter(f);
+              setExpanded(false);
+            }}
           >
             {f}
             {f === "All work" && (
@@ -70,7 +78,7 @@ export function ProjectGrid() {
       <p className="sr-only" role="status">
         {selected.length} projects shown
       </p>
-      <div className="project-grid">
+      <div className="project-grid" id="project-results">
         {selected.map((p) => (
           <article key={p.slug} className="project-card">
             <Link
@@ -90,6 +98,7 @@ export function ProjectGrid() {
               <span aria-hidden="true">↗</span>
             </Link>
             <p>{p.description}</p>
+            <p className="project-role">{p.role}</p>
             <div className="tags">
               {p.stack.map((t) => (
                 <span key={t}>{t}</span>
@@ -98,6 +107,14 @@ export function ProjectGrid() {
           </article>
         ))}
       </div>
+      {filter === "All work" && (
+        <div className="catalogue-action">
+          <button className="button button-outline" aria-expanded={expanded} aria-controls="project-results" onClick={() => setExpanded(!expanded)}>
+            {expanded ? "Show selected projects" : `Explore all ${projects.length} projects`} <span aria-hidden="true">{expanded ? "↑" : "↓"}</span>
+          </button>
+          <p>Case studies include my contribution, approach, and current project status.</p>
+        </div>
+      )}
     </>
   );
 }

@@ -16,15 +16,15 @@ function subscribeTheme(callback: () => void) {
 function getTheme() {
   if (memoryTheme !== null) return memoryTheme;
   try {
-    return localStorage.getItem("portfolio-theme") === "dark";
+    return localStorage.getItem("portfolio-theme") !== "light";
   } catch {
-    return false;
+    return true;
   }
 }
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const dark = useSyncExternalStore(subscribeTheme, getTheme, () => false);
+  const dark = useSyncExternalStore(subscribeTheme, getTheme, () => true);
   useEffect(() => {
     document.documentElement.dataset.theme = dark ? "dark" : "light";
   }, [dark]);

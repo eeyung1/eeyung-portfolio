@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ProjectGrid } from "@/components/project-grid";
 import { Contact } from "@/components/contact";
 import { Activity } from "@/components/activity";
@@ -10,26 +11,26 @@ export default function Home() {
       <section className="hero container">
         <div className="hero-copy">
           <p className="eyebrow hero-eyebrow">
-            <span className="status-dot" /> SOFTWARE ENGINEER · PRODUCT BUILDER
+            <span className="status-dot" /> GO · PYTHON · APPLIED AI
           </p>
           <h1>
-            Good ideas deserve
+            Emmanuel Eyung.
             <br />
-            to become
+            <em>Engineering ideas</em>
             <br />
-            <em>working products.</em>
+            into working products.
           </h1>
           <p className="hero-description">
-            I’m Emmanuel Eyung. I build thoughtful web applications, reliable
-            backends, and AI-powered workflows that solve problems for real
-            people.
+            I’m a backend-focused software engineer building web applications,
+            reliable APIs, and AI workflows. From the first database table to the
+            interface people use, I connect the pieces and ship the product.
           </p>
           <div className="hero-actions">
             <a className="button button-dark" href="#work">
               Explore my work <span>↘</span>
             </a>
             <a className="text-link" href="#contact">
-              Let’s build something <span>↗</span>
+              Discuss a project <span>↗</span>
             </a>
           </div>
           <div className="hero-footnote">
@@ -57,9 +58,14 @@ export default function Home() {
             <strong>impact.</strong>
             <span>ONE RELEASE AT A TIME</span>
           </div>
-          <span className="portrait-index">01 / INTRODUCTION</span>
+          <span className="portrait-index">SOFTWARE ENGINEER / NIGERIA</span>
         </div>
       </section>
+      <div className="container proof-strip" aria-label="Explore my engineering work">
+        <Link href="/work/l2estudylink"><span>PRODUCT ENGINEERING</span><strong>Learning, connected.</strong><small>L2EStudyLink · Go & PostgreSQL ↗</small></Link>
+        <Link href="/work/multi-agent-orchestrator"><span>AI & AUTOMATION</span><strong>Workflows with boundaries.</strong><small>Agent coordination · Explore the approach ↗</small></Link>
+        <a href="#services"><span>FROM BUILD TO DELIVERY</span><strong>A clear next step.</strong><small>APIs, integrations & product development ↗</small></a>
+      </div>
       <div className="expertise-strip">
         <div className="container">
           <span>FROM INTERFACE TO INFRASTRUCTURE</span>
